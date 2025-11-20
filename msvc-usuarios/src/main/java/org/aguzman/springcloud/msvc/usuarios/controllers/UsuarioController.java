@@ -46,6 +46,11 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.guardar(usuario));
     }
 
+    @GetMapping("/usuarios")
+    public ResponseEntity<?> obtenerAlumnosPorIds(@RequestParam List<Long> ids){
+        return ResponseEntity.ok(service.listarPorIds(ids));
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<?> editar(@Valid @RequestBody Usuario usuario, BindingResult result, @PathVariable Long id) {
 
