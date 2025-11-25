@@ -46,7 +46,7 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.guardar(usuario));
     }
 
-    @GetMapping("/usuarios")
+    @GetMapping("/usuarios-por-id")
     public ResponseEntity<?> obtenerAlumnosPorIds(@RequestParam List<Long> ids){
         return ResponseEntity.ok(service.listarPorIds(ids));
     }
